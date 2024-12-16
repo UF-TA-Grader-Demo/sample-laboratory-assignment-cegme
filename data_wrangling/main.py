@@ -1,4 +1,3 @@
-```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -81,4 +80,3 @@ if __name__ == '__main__':
         main(args.file_path)
     else:
         print(f"File {args.file_path} does not exist.")
-```

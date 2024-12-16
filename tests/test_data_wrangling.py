@@ -1,3 +1,5 @@
+import os
+
 import pytest
 from data_wrangling.main import read_data, fill_missing_values, normalize_score, create_visualizations
 

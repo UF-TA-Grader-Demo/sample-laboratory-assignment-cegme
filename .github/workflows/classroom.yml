@@ -1,6 +1,6 @@
 name: Autograding Tests
 'on':
-- push
+- workflow_dispatch
 - repository_dispatch
 permissions:
   checks: write
@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: Environment Setup
         setup-command: pip install -r requirements.txt
-        command: pytest --disable-warnings -q tests/test_data_wrangling.py::test_environment_set_up
+        command: pytest --disable-warnings -q tests/test_main.py::test_environment_set_up
         timeout: 1
         max-score: 20
     - name: CSV File Upload and Reading
@@ -28,7 +28,7 @@ jobs:
       with:
         test-name: CSV File Upload and Reading
         setup-command: pip install -r requirements.txt
-        command: pytest --disable-warnings -q tests/test_data_wrangling.py::test_csv_file_upload
+        command: pytest --disable-warnings -q tests/test_main.py::test_csv_file_upload
         timeout: 1
         max-score: 20
     - name: Fill Missing Values
@@ -37,7 +37,7 @@ jobs:
       with:
         test-name: Fill Missing Values
         setup-command: pip install -r requirements.txt
-        command: pytest --disable-warnings -q tests/test_data_wrangling.py::test_fill_missing_values
+        command: pytest --disable-warnings -q tests/test_main.py::test_fill_missing_values
         timeout: 2
         max-score: 20
     - name: Normalize Score
@@ -46,7 +46,7 @@ jobs:
       with:
         test-name: Normalize Score
         setup-command: pip install -r requirements.txt
-        command: pytest --disable-warnings -q tests/test_data_wrangling.py::test_normalize_score
+        command: pytest --disable-warnings -q tests/test_main.py::test_normalize_score
         timeout: 2
         max-score: 20
     - name: Create Visualizations
@@ -55,7 +55,7 @@ jobs:
       with:
         test-name: Create Visualizations
         setup-command: pip install -r requirements.txt
-        command: pytest --disable-warnings -q tests/test_data_wrangling.py::test_create_visualizations
+        command: pytest --disable-warnings -q tests/test_main.py::test_create_visualizations
         timeout: 2
         max-score: 20
     - name: Autograding Reporter
